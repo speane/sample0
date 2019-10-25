@@ -14,6 +14,7 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "pom.xml" }}
             - v1-dependencies-
+      - allow_mvnw_execution: chmod +x ./mvnw
       - run: ./mvnw dependency:go-offline
       - save_cache:
           paths:
